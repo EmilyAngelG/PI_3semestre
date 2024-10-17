@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../signup-styles.css">
+    <title>Formulário de Cadastro</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="info-section">
+            <h2>Informações Importantes</h2>
+            <p>Adicionar mais tarde.</p>
+            <button class="btn"><a href="/">Voltar ao inicio</a></button>
+        </div>
+        <div class="signup-form-container">
+            <form id="form-cadastro" class="form-signup" method="POST" action="/cadastro">
+                <!-- Adicione o método e a ação -->
+                <h3><i class="fas fa-book"></i> Cadastro</h3>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" class="box" required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senha" class="box" required>
+
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" class="box" required>
+
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" id="cpf" class="box" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="text" name="telefone" id="telefone" class="box" required>
+
+                <label for="rua">Rua:</label>
+                <input type="text" name="rua" id="rua" class="box" required>
+
+                <label for="numero">Número:</label>
+                <input type="text" name="numero" id="numero" class="box" required>
+
+                <label for="bairro">Bairro:</label>
+                <input type="text" name="bairro" id="bairro" class="box" required>
+
+                <label for="cidade">Cidade:</label>
+                <input type="text" name="cidade" id="cidade" class="box" required>
+
+                <label for="estado">Estado:</label>
+                <select name="estado" id="estado" class="box" required>
+                    <option value="">Selecione seu estado</option>
+                    <option value="AC">Acre (AC)</option>
+                    <option value="AL">Alagoas (AL)</option>
+                    <option value="AP">Amapá (AP)</option>
+                    <option value="AM">Amazonas (AM)</option>
+                    <option value="BA">Bahia (BA)</option>
+                    <option value="CE">Ceará (CE)</option>
+                    <option value="DF">Distrito Federal (DF)</option>
+                    <option value="ES">Espírito Santo (ES)</option>
+                    <option value="GO">Goiás (GO)</option>
+                    <option value="MA">Maranhão (MA)</option>
+                    <option value="MT">Mato Grosso (MT)</option>
+                    <option value="MS">Mato Grosso do Sul (MS)</option>
+                    <option value="MG">Minas Gerais (MG)</option>
+                    <option value="PA">Pará (PA)</option>
+                    <option value="PB">Paraíba (PB)</option>
+                    <option value="PR">Paraná (PR)</option>
+                    <option value="PE">Pernambuco (PE)</option>
+                    <option value="PI">Piauí (PI)</option>
+                    <option value="RJ">Rio de Janeiro (RJ)</option>
+                    <option value="RN">Rio Grande do Norte (RN)</option>
+                    <option value="RS">Rio Grande do Sul (RS)</option>
+                    <option value="RO">Rondônia (RO)</option>
+                    <option value="RR">Roraima (RR)</option>
+                    <option value="SC">Santa Catarina (SC)</option>
+                    <option value="SP">São Paulo (SP)</option>
+                    <option value="SE">Sergipe (SE)</option>
+                    <option value="TO">Tocantins (TO)</option>
+                </select>
+
+
+                <label for="cep">CEP:</label>
+                <input type="text" name="cep" id="cep" class="box" required>
+
+                <button type="submit" class="btn">Cadastrar</button>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Popup de erro -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h4><span id="popup-message"></span></h4>
+            <button id="popup-button" class="btn">Fechar</button> <!-- Adicionando a classe 'btn' -->
+        </div>
+    </div>
+    <div id="popup-overlay" class="popup-overlay" onclick="closePopup()"></div>
+
+
+    <script>
+        // Função para abrir o popup com a mensagem de erro ou sucesso
+        function openPopup(message, isSuccess) {
+            document.getElementById("popup-message").innerText = message;
+            document.getElementById("popup").classList.add("active");
+            document.getElementById("popup-overlay").classList.add("active");
+
+            // Adiciona ou altera o botão de acordo com o sucesso do cadastro
+            const button = document.getElementById("popup-button");
+            if (isSuccess) {
+                button.innerText = "Ir para página principal";
+                button.onclick = () => {
+                    window.location.href = '/'; // Redireciona para a página inicial
+                };
+            } else {
+                button.innerText = "Fechar";
+                button.onclick = closePopup; // Fecha o popup
+            }
+        }
+
+        // Função para fechar o popup
+        function closePopup() {
+            document.getElementById("popup").classList.remove("active");
+            document.getElementById("popup-overlay").classList.remove("active");
+        }
+
+        // Captura o formulário e lida com o envio via JavaScript
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('form-cadastro').addEventListener('submit', async function (event) {
+                event.preventDefault(); // Evita o envio padrão do formulário
+
+                const formData = new FormData(this);
+                const data = {
+                    nome: formData.get('nome'),
+                    email: formData.get('email'),
+                    senha: formData.get('senha'),
+                    cpf: formData.get('cpf'),
+                    telefone: formData.get('telefone'),
+                    rua: formData.get('rua'),
+                    numero: formData.get('numero'),
+                    bairro: formData.get('bairro'),
+                    cidade: formData.get('cidade'),
+                    estado: formData.get('estado'),
+                    cep: formData.get('cep')
+                };
+
+                try {
+                    const response = await fetch('/cadastro', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data), // Enviando os dados em JSON
+                    });
+
+                    if (!response.ok) {
+                        const errorText = await response.text(); // Captura o erro retornado do servidor
+                        openPopup(errorText, false); // Exibe o popup com a mensagem de erro
+                    } else {
+                        openPopup('Cadastro realizado com sucesso!', true); // Exibe o popup de sucesso
+                    }
+                } catch (error) {
+                    console.error('Erro ao enviar o formulário:', error);
+                    openPopup('Erro no servidor, tente novamente mais tarde.', false);
+                }
+            });
+            // Manter a sessão ativa com requisições periódicas
+            setInterval(() => {
+                fetch('/keep-alive'); // Envie uma requisição para manter a sessão ativa
+            }, 20000); // 20 segundos
+        });
+    </script>
+
+</body>

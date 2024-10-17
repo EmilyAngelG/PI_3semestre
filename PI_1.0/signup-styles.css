@@ -16,6 +16,12 @@
     box-sizing: border-box;
 }
 
+a {
+    padding: 2rem;
+    color:#fff;  
+    text-decoration: none;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -93,26 +99,6 @@ color: var(--green);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Media Queries */
 @media (max-width: 768px) {
     .container {
@@ -132,4 +118,65 @@ color: var(--green);
 
     .signup-form-container form {
         padding: 1rem;     }
+}
+
+/* Estilo básico para o popup */
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, .9); /* Fundo semelhante ao do formulário */
+    border-radius: .5rem; /* Bordas arredondadas */
+    z-index: 1000;
+    box-shadow: var(--box-shadow); /* Sombra como no formulário */
+}
+
+.popup.active {
+    display: block;
+}
+
+.popup-content {
+    padding: 2rem; /* Espaçamento interno */
+    text-align: center; /* Centralizar texto */
+}
+
+.popup h3 {
+    font-size: 2.5rem; /* Tamanho da fonte do título */
+    color: var(--black); /* Cor do título */
+    margin-bottom: 1rem; /* Margem abaixo do título */
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.popup-overlay.active {
+    display: block;
+}
+
+/* Efeito hover para o botão do popup */
+.btn {
+    background-color: var(--green); /* Cor de fundo padrão */
+    color: #fff; /* Cor do texto */
+    border: none; /* Remover borda */
+    margin-top: 0.9rem;
+    padding: 0.3rem; /* Espaçamento interno */
+    font-size: 1.3rem; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.btn:hover {
+    background-color: var(--green); /* Cor de fundo padrão */
+    color: #fff; /* Cor do texto */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adiciona sombra ao botão */
 }

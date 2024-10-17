@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prateleira</title>
+
+    <!-- link do cdn fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!--link css customizado-->
+    <link rel="stylesheet" href="../styles.css">
+
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <!--Início do Header-->
+    <header class="header">
+        <div class="header-1">
+            <a href="/" class="logo"> <i class="fas fa-book"></i> Prateleira </a>
+            <form action="" class="search-form">
+                <input type="search" name="" placeholder="Pesquisa..." id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+            <div class="icons">
+                <div id="search-btn" class="fas fa-search"></div>
+                <a href="/" class="fas fa-heart"></a>
+                <a href="/" class="fas fa-shopping-cart"></a>
+                <div id="login-btn" class="fas fa-user"></div>
+                {{#if usuario}}
+                    <button id="logout-btn" class="btn btn-danger">Logout</button>
+                {{/if}}
+
+            </div>
+        </div>
+    </header>
+    <div class="header-2">
+        <nav class="navbar">
+            <a href="/">home</a>
+            <a href="#kit">kit's</a>
+            <a href="#planos">planos</a>
+            <a href="#review">review</a>
+            <a href="#contato">contato</a>
+        </nav>
+    </div>
+    <!-- Fim do Header -->
+
+    <!-- navbar inferior -->
+    <nav class="bottom-navbar">
+        <a href="#xxx1" class="fas fa-home"></a>
+        <a href="#xxx2" class="fas fa-list"></a>
+        <a href="#xx3" class="fas fa-tags"></a>
+        <a href="#xxx4" class="fas fa-comments"></a>
+        <a href="#xxx5" class="fas fa-phone"></a>
+    </nav>
+
+    <!-- Seção de Dados do Usuário -->
+    <div class="container mt-5">
+        <div class="user-data-container row">
+            <div class="container mt-2">
+                <div class="user-data-container row">
+                    <div class="user-info col-lg-6 col-md-12 mb-4">
+                        <h1>Dados do Usuário</h1>
+                        <form id="user-data-form" action="/atualizarUsuario" method="POST">
+                            <div class="form-group">
+                                <label for="user-email">
+                                    <h2><strong>Email:</strong></h2>
+                                </label>
+                                <input type="email" id="user-email" name="email" value="{{usuario.email}}"
+                                    class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-senha">
+                                    <h2><strong>Senha:</strong></h2>
+                                </label>
+                                <input type="text" id="user-senha" name="senha" value="{{usuario.senha}}"
+                                    class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-nome">
+                                    <h2><strong>Nome:</strong></h2>
+                                </label>
+                                <input type="text" id="user-nome" name="nome" value="{{usuario.nome}}"
+                                    class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-cpf">
+                                    <h2><strong>CPF:</strong></h2>
+                                </label>
+                                <input type="text" id="user-cpf" name="cpf" value="{{usuario.cpf}}" class="form-control"
+                                    readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-telefone">
+                                    <h2><strong>Telefone:</strong></h2>
+                                </label>
+                                <input type="text" id="user-telefone" name="contato" value="{{usuario.contato}}"
+                                    class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-rua">
+                                    <h2><strong>Rua:</strong></h2>
+                                </label>
+                                <input type="text" id="user-rua" name="endereco.rua" value="{{usuario.endereco.rua}}"
+                                    class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-numero">
+                                    <h2><strong>Número:</strong></h2>
+                                </label>
+                                <input type="text" id="user-numero" name="endereco.numero"
+                                    value="{{usuario.endereco.numero}}" class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-bairro">
+                                    <h2><strong>Bairro:</strong></h2>
+                                </label>
+                                <input type="text" id="user-bairro" name="endereco.bairro"
+                                    value="{{usuario.endereco.bairro}}" class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-cidade">
+                                    <h2><strong>Cidade:</strong></h2>
+                                </label>
+                                <input type="text" id="user-cidade" name="endereco.cidade"
+                                    value="{{usuario.endereco.cidade}}" class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-estado">
+                                    <h2><strong>Estado:</strong></h2>
+                                </label>
+                                <input type="text" id="user-estado" name="endereco.estado"
+                                    value="{{usuario.endereco.estado}}" class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-cep">
+                                    <h2><strong>CEP:</strong></h2>
+                                </label>
+                                <input type="text" id="user-cep" name="endereco.cep" value="{{usuario.endereco.cep}}"
+                                    class="form-control" readonly>
+                            </div>
+
+                            <!-- Botões de ação -->
+                            <button type="button" class="btn btn-primary" id="edit-button">Editar</button>
+                            <button type="button" class="btn btn-primary" id="delete-button" data-usuario-id="{{usuario.id}}">Excluir</button>
+                            <button type="submit" class="btn btn-success d-none" id="save-button">Atualizar</button>
+                            <button type="button" class="btn btn-secondary d-none" id="cancel-button">Cancelar</button>
+                        </form>
+                    </div>
+
+                    <div class="subscription-info col-lg-6 col-md-12 mb-4">
+                        <h1>Dados de Assinatura</h1>
+                        <form id="user-data-form">
+                            <div class="form-group">
+                                <label for="user-email"><h2><strong>Gênero:</strong></h2></label>
+                                <input type="text" id="user-genero" name="genero"
+                                    value="{{usuario.dadosAssinatura.genero}}" class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-kit"><h2><strong>Tipo de Kit:</strong></h2></label>
+                                <input type="text" id="user-kit" name="tipo-kit"
+                                    value="{{usuario.dadosAssinatura.tipo_kit}}" class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-preco"><h2><strong>Preço da Assinatura:</strong></h2></label>
+                                <input type="text" id="user-preco" name="preco"
+                                    value="{{usuario.dadosAssinatura.preco_assinatura}}" class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-status"><h2><strong>Status do Plano: </strong></h2></label>
+                                <input type="text" id="user-status" name="status" value="{{usuario.statusPlano}}"
+                                    class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-financeiro"><h2><strong>Status Financeiro: </strong></h2></label>
+                                <input type="text" id="user-financeiro" name="financeiro"
+                                    value="{{usuario.statusFinanceiro}}" class="form-control" readonly>
+                            </div>
+                            <button class="btn btn-primary">Editar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup de confirmação de exclusão -->
+    <div id="confirmDeletePopup" class="popup">
+        <div class="popup-content">
+            <h3>Tem certeza de que deseja excluir sua conta?</h3>
+            <button id="cancelDelete" class="btn btn-primary">Cancelar</button>
+            <button id="confirmDelete" class="btn btn-primaty" >Excluir</button>
+        </div>
+    </div>
+
+
+    <!--link JS customizado-->
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

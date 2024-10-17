@@ -23,7 +23,7 @@
 
 html{
     font-size: 62.5%;
-    overflow: hidden;
+    /*overflow: hidden;*/
     scroll-padding-top: 5rem;
     scroll-behavior: smooth;
 }
@@ -52,6 +52,7 @@ html::-webkit-scrollbar-track{
    font-weight: 500;
  }
 
+ 
  .btn:hover{
     background: var(--dark-color);
  }
@@ -132,6 +133,10 @@ html::-webkit-scrollbar-track{
     text-align: center;
 }
 
+a{
+    text-decoration: none;
+}
+
 .header-2 .navbar a{
     color: #fff;
     display: inline-block;
@@ -163,6 +168,7 @@ html::-webkit-scrollbar-track{
   font-size: 2.5rem;
   padding: 2rem;
   color:#fff;  
+  
 }
 
 .bottom-navbar a:hover{
@@ -259,67 +265,125 @@ html::-webkit-scrollbar-track{
 }
 
 
+/*Página do usuário*/
 
+.user-data-container {
+    margin: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+.user-info, .subscription-info {
+    padding: 20px;
+    background: rgba(240, 240, 240, 0.9); /* Cor de fundo dos cartões */
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
 
+.user-info h2, .subscription-info h2 {
+    margin: 10px 0;
+    font-size: 1.5rem; /* Tamanho do título */
+    color: var(--black); /* Ajuste se necessário */
+}
 
+.user-data-container strong {
+    color: var(--dark-color);
+}
 
+.user-info h1, .subscription-info h1{
+    font-size: 2rem;
+    color: var(--black);
+    text-align: center;
+    margin-bottom: 20px;
+}
 
+.edit-button {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--green); /* Ajuste para a cor desejada */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
+.edit-button:hover {
+    background-color: var(--dark-green); /* Ajuste para um tom mais escuro */
+}
 
+.user-info h2, .subscription-info h2 {
+    margin: 10px 0;
+    font-size: 1.5rem; /* Tamanho do título */
+    color: var(--black); /* Ajuste se necessário */
+}
 
+.form-group h2{
+    margin: 0;
+}
 
+.form-control{
+    margin: 10px 0;
+    font-size: 1.5rem; /* Tamanho do título */
+    color: var(--black); /* Ajuste se necessário */
+}
 
+input {
+    text-transform: none; /* Ou simplesmente remova qualquer transformação de texto */
+}
 
+/* Estilo básico para o popup */
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, .9); /* Fundo semelhante ao do formulário */
+    border-radius: .5rem; /* Bordas arredondadas */
+    z-index: 1000;
+    box-shadow: var(--box-shadow); /* Sombra como no formulário */
+}
 
+.popup.active {
+    display: block;
+}
 
+.popup-content {
+    padding: 2rem; /* Espaçamento interno */
+    text-align: center; /* Centralizar texto */
+}
 
+.popup h3 {
+    font-size: 2.5rem; /* Tamanho da fonte do título */
+    color: var(--black); /* Cor do título */
+    margin-bottom: 1rem; /* Margem abaixo do título */
+}
 
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
 
+.popup-overlay.active {
+    display: block;
+}
 
-/* media queries */
+.btn-danger{
+    background-color: rgb(255, 71, 71);
+    font-size: 1.5em;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
 
-@media (max-width:768px){
-      
-    html{
-        scroll-padding-top: 0;
-    } 
-    
-    body{
-        padding-bottom: 6rem;
-    }
-    .header-2{
-        display: none;
-      }
-
-      .bottom-navbar{
-        display: block;
-      }
-
-      #search-btn{
-        display: inline-block;
-     }
- 
-      .header .header-1{
-        box-shadow: var(--box-shadow);
-        position: relative;
-      }
-      
-      .header .header-1 .search-form{
-        position:absolute;
-        top: -115%; right: 2rem;
-        width: 90%;
-        box-shadow: var(--box-shadow);
-
-      }
-
-      .header .header-1 .search-form.active{
-        top: 115%;
-      }
-}    
-
-@media (max-width:450px){
-    html{
-        font-size: 50%;
-    }
+.btn-danger :hover{
+    background-color: rgb(196, 40, 40);
 }
