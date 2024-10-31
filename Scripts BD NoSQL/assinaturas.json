@@ -1,0 +1,48 @@
+[{
+  "id": "assinatura1",
+  "genero": "Ficção",
+  "tipo_kit": "Básico",
+  "qtd_adicionais": 1,
+  "preco_assinatura": 69.90,
+  "status_assinatura": "ativa"
+},
+{
+  "id": "assinatura2",
+  "genero": "Romance",
+  "tipo_kit": "Premium",
+  "qtd_adicionais": 3,
+  "preco_assinatura": 109.90,
+  "status_assinatura": "ativa"
+},
+{
+  "id": "assinatura3",
+  "genero": "Mistério",
+  "tipo_kit": "Básico",
+  "qtd_adicionais": 2,
+  "preco_assinatura": 79.90,
+  "status_assinatura": "ativa"
+},
+{
+  "id": "assinatura4",
+  "genero": "Ficção",
+  "tipo_kit": "Premium",
+  "qtd_adicionais": 3,
+  "preco_assinatura": 109.90,
+  "status_assinatura": "ativa"
+},
+{
+  "id": "assinatura5",
+  "genero": "Romance",
+  "tipo_kit": "Básico",
+  "qtd_adicionais": 1,
+  "preco_assinatura": 69.90,
+  "status_assinatura": "ativa"
+},
+{
+  "id": "assinatura6",
+  "genero": "Mistério",
+  "tipo_kit": "Premium",
+  "qtd_adicionais": 3,
+  "preco_assinatura": 109.90,
+  "status_assinatura": "ativa"
+}]

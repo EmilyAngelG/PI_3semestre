@@ -1,0 +1,177 @@
+[{
+  "_id": {
+    "$oid": "6715cfc7bec65d5677d4b6f4"
+  },
+  "id": "livro1",
+  "tipo": "livro",
+  "titulo": "O Alquimista",
+  "autor": "Paulo Coelho",
+  "genero": "Ficção",
+  "quantidade_estoque": 13
+},
+{
+  "_id": {
+    "$oid": "6715cfc7bec65d5677d4b6f5"
+  },
+  "id": "livro2",
+  "tipo": "livro",
+  "titulo": "A Culpa é das Estrelas",
+  "autor": "John Green",
+  "genero": "Romance",
+  "quantidade_estoque": 10
+},
+{
+  "_id": {
+    "$oid": "6715cfc7bec65d5677d4b6f6"
+  },
+  "id": "livro3",
+  "tipo": "livro",
+  "titulo": "A Garota no Trem",
+  "autor": "Paula Hawkins",
+  "genero": "Mistério",
+  "quantidade_estoque": 8
+},
+{
+  "_id": {
+    "$oid": "6715cfc7bec65d5677d4b6f7"
+  },
+  "id": "livro4",
+  "tipo": "livro",
+  "titulo": "1984",
+  "autor": "George Orwell",
+  "genero": "Ficção",
+  "quantidade_estoque": 5
+},
+{
+  "_id": {
+    "$oid": "6715cfc7bec65d5677d4b6f8"
+  },
+  "id": "item1",
+  "tipo": "item_adicional",
+  "nome": "Caneta",
+  "titulo_referencia": "O Alquimista",
+  "quantidade_estoque": 21
+},
+{
+  "_id": {
+    "$oid": "6715cfc7bec65d5677d4b6f9"
+  },
+  "id": "item2",
+  "tipo": "item_adicional",
+  "nome": "Marcador de Texto",
+  "titulo_referencia": "A Culpa é das Estrelas",
+  "quantidade_estoque": 38
+},
+{
+  "_id": {
+    "$oid": "6715cfc7bec65d5677d4b6fa"
+  },
+  "id": "item3",
+  "tipo": "item_adicional",
+  "nome": "Protetor de Capa",
+  "titulo_referencia": "A Garota no Trem",
+  "quantidade_estoque": 20
+},
+{
+  "_id": {
+    "$oid": "6715cfc7bec65d5677d4b6fb"
+  },
+  "id": "item4",
+  "tipo": "item_adicional",
+  "nome": "Chaveiro",
+  "titulo_referencia": "1984",
+  "quantidade_estoque": 15
+},
+{
+  "_id": {
+    "$oid": "6715cfc7bec65d5677d4b6fc"
+  },
+  "id": "item5",
+  "tipo": "item_adicional",
+  "nome": "Caneta Colorida",
+  "titulo_referencia": "O Alquimista",
+  "quantidade_estoque": 22
+},
+{
+  "_id": {
+    "$oid": "6715cfc7bec65d5677d4b6fd"
+  },
+  "id": "item6",
+  "tipo": "item_adicional",
+  "nome": "Marcador de Páginas",
+  "titulo_referencia": "A Culpa é das Estrelas",
+  "quantidade_estoque": 18
+},
+{
+  "_id": {
+    "$oid": "6715cfc7bec65d5677d4b6fe"
+  },
+  "id": "item7",
+  "tipo": "item_adicional",
+  "nome": "Capa de Proteção",
+  "titulo_referencia": "A Garota no Trem",
+  "quantidade_estoque": 12
+},
+{
+  "_id": {
+    "$oid": "6715cfc7bec65d5677d4b6ff"
+  },
+  "id": "kitNovembro2024",
+  "tipo": "kit",
+  "genero": "Mistério",
+  "mes_referencia": "Novembro2024",
+  "quantidade_estoque": 20,
+  "itens": [
+    {
+      "produto_id": "livro3",
+      "quantidade": 1
+    },
+    {
+      "produto_id": "item3",
+      "quantidade": 1
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6715cfc7bec65d5677d4b700"
+  },
+  "id": "kitDezembro2024",
+  "tipo": "kit",
+  "genero": "Romance",
+  "mes_referencia": "Dezembro2024",
+  "quantidade_estoque": 15,
+  "itens": [
+    {
+      "produto_id": "livro2",
+      "quantidade": 1
+    },
+    {
+      "produto_id": "item6",
+      "quantidade": 1
+    }
+  ],
+  "assinatura_referencia": {
+    "$oid": "671e435127f3b54747b79c06" 
+  }
+},
+{
+  "_id": {
+    "$oid": "6715cfc7bec65d5677d4b701"
+  },
+  "id": "kitJaneiro2025",
+  "tipo": "kit",
+  "genero": "Ficção",
+  "mes_referencia": "Janeiro2025",
+  "quantidade_estoque": 10,
+  "itens": [
+    {
+      "produto_id": "livro1",
+      "quantidade": 1
+    },
+    {
+      "produto_id": "item4",
+      "quantidade": 1
+    }
+  ]
+}]

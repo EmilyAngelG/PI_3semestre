@@ -1,0 +1,67 @@
+body {
+    background-color: #f0f8f7; /* Cor de fundo suave */
+    font-family: Arial, sans-serif; /* Fonte padrão */
+}
+
+.container {
+    max-width: 600px; /* Limita a largura do container */
+    margin: 50px auto; /* Centraliza o container */
+    padding: 20px;
+    background-color: #ffffff; /* Fundo branco para o formulário */
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.logo{
+    color: #2e7d32;
+}
+
+h1 {
+    color: #2e7d32; /* Verde escuro */
+    text-align: center; /* Centraliza o título */
+    margin-bottom: 30px; /* Espaço abaixo do título */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Espaço entre os grupos de formulários */
+}
+
+.form-control {
+    border: 1px solid #c8e6c9; /* Borda verde clara */
+    border-radius: 5px; /* Bordas arredondadas para inputs */
+    padding: 10px; /* Espaçamento interno */
+}
+
+.form-control:focus {
+    border-color: #66bb6a; /* Borda verde mais escura ao focar */
+    box-shadow: 0 0 5px rgba(102, 187, 106, 0.5); /* Sombra ao focar */
+}
+
+.btn {
+    background-color: #4caf50; /* Botão verde */
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Bordas arredondadas para o botão */
+    padding: 10px; /* Espaçamento interno do botão */
+    width: 100%; /* Botão ocupa toda a largura do formulário */
+    font-size: 16px; /* Aumenta o tamanho da fonte do botão */
+}
+
+.btn:hover {
+    background-color: #388e3c; /* Verde escuro ao passar o mouse */
+}
+
+.text-decoration-none {
+    color: #388e3c; /* Verde escuro para os links */
+    margin-left: 10px; /* Espaço à esquerda dos links */
+}
+
+.text-decoration-none:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+@media (max-width: 576px) {
+    .form-group {
+        display: flex; /* Utiliza flexbox para os inputs em telas pequenas */
+        flex-direction: column; /* Coloca os elementos um abaixo do outro */
+    }
+}

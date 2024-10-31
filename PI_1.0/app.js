@@ -151,6 +151,7 @@ app.post("/login", async (req, res) => {
         req.session.usuario = {
             id: usuario.id,
             nome: usuario.nome,
+            cpf: usuario.cpf,
             tipo: usuario.tipo,
             contato: usuario.contato,
             email: usuario.email,

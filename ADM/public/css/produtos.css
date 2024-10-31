@@ -1,0 +1,96 @@
+:root{
+  --green:#27ae60;
+  --dark-color: #219150;
+  --black: #444;
+  --light-color: #666;
+  --border: .1rem solid rgba(0,0,0,.1);
+  --border-hover: .1rem solid var(--black);
+  --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+/*.btn:hover{
+  background: var(--dark-color);
+}*/
+
+.header-2{
+background: var(--green); 
+
+}
+
+.header-2 .navbar{
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+}
+
+.header-2 .navbar a{
+  color: #fff;
+  display: inline-block;
+  padding: 0.3rem;
+  font-size: 1.1rem;
+}
+
+.header-2.active{
+  position: fixed;
+  top: 0; left:0; right: 0;
+  z-index: 1000;
+}
+
+
+
+
+/* Estilo geral para as tabelas */
+
+/* Classe para campos não interativos */
+.no-select {
+  pointer-events: none; /* Impede a interação do mouse */
+  background-color: #f2f2f3; /* Cor de fundo similar ao readonly */
+  border: 1px solid #ced4da; /* Borda semelhante ao estilo padrão */
+}
+
+
+.table {
+  border-radius: 8px; /* Cantos arredondados */
+  margin-bottom: 30px; /* Espaçamento inferior */
+  overflow: hidden; /* Para garantir que os cantos arredondados funcionem */
+}
+
+/* Estilo para o cabeçalho das tabelas */
+.table thead th {
+  background-color: #27ae60; /* Fundo azul para o cabeçalho */
+  color: white; /* Texto branco */
+  padding: 10px; /* Padding para o cabeçalho */
+}
+
+/* Estilo para as linhas das tabelas */
+.table tbody tr {
+  transition: background-color 0.3s; /* Transição suave para o fundo */
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #f8f9fa; /* Linhas cinzas claras */
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #e8f5e9; /* Linhas em um tom levemente verde */
+}
+
+/* Estilo para o efeito de hover */
+.table-striped tbody tr.linha-produto-itens:hover {
+  background-color: #d1e7dd !important;
+}
+
+/* Estilo para as células das tabelas */
+.table td, .table th {
+  padding: 12px; /* Padding nas células */
+  text-align: left; /* Alinhamento à esquerda do texto */
+}
+
+/* Ajustes para manter a responsividade */
+@media (max-width: 768px) {
+  .table {
+      font-size: 14px; /* Tamanho da fonte reduzido em telas menores */
+  }
+}

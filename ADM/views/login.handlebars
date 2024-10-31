@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../public/css/login..css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container center-content">
+        <h1><a href="/" class="logo"> <i class="fas fa-book"></i> Prateleira ADM</a></h1>
+        <form id="form-login" class="p-4 bg-light rounded">
+
+            <div class="form-group">
+                <label for="email">Endereço de e-mail</label>
+                <input type="email" id="login-email" class="form-control" name="email" required />
+            </div>
+
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="login-senha" class="form-control" name="senha" required />
+            </div>
+
+            <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                        <label class="form-check-label" for="form2Example31"> Mantenha-me conectado </label>
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-center align-items-center">
+
+                    <a href="#" class="text-decoration-none">Esqueceu a senha?</a>
+                    <a href="#" class="text-decoration-none">Primeiro acesso</a>
+                </div>
+            </div>
+
+            <input type="submit" value="entrar" class="btn btn-primary btn-block mb-4">
+        </form>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Adicionando a lógica para o login
+            const formLogin = document.getElementById('form-login');
+            if (formLogin) {
+                formLogin.addEventListener('submit', async function (event) {
+                    event.preventDefault(); // Impede o envio padrão do formulário
+
+                    const formData = new FormData(this);
+                    const data = {
+                        email: formData.get('email'),
+                        senha: formData.get('senha')
+                    };
+
+                    try {
+                        const response = await fetch('/login', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data),
+                        });
+
+                        if (!response.ok) {
+                            const errorText = await response.text(); // Captura o erro retornado do servidor
+                            alert(`Erro: ${errorText}`); // Exibe o erro
+                        } else {
+                            // Se o login for bem-sucedido, redireciona para a página do usuário
+                            window.location.href = 'produtos';
+                        }
+                    } catch (error) {
+                        console.error('Erro ao enviar o formulário:', error);
+                        alert('Erro no servidor, tente novamente mais tarde.');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
